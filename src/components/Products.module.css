@@ -1,0 +1,84 @@
+.table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9rem;
+  width: 70%;
+  min-width: 320px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.tr {
+  background-color: #111d33;
+  color: #fcfaf6;
+  text-align: left;
+  font-weight: bold;
+}
+
+.table tbody {
+  background-color: #fcfaf6;
+}
+
+.table th,
+.table td {
+  padding: 12px 15px;
+}
+
+.table th {
+  font-size: 1.5rem;
+}
+
+.table tbody tr {
+  border-bottom: 1px solid #111d33;
+  transition: all 0.3s ease-in-out;
+}
+
+.table tbody tr:hover {
+  background-color: #111d33;
+}
+
+.table tbody tr:hover > td {
+  color: #fcfaf6;
+}
+
+.table td {
+  color: #111d33;
+  font-size: 1rem;
+}
+.table td button {
+  width: 100px;
+  height: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  transition: all 0.3s ease-in-out;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.table td button:hover {
+  opacity: 0.7;
+}
+
+.edit {
+  background-color: yellow;
+  margin-right: 15px;
+}
+
+.delete {
+  background-color: red;
+  margin: 10px 0 10px 0;
+}
+
+.error {
+  color: #fcfaf6;
+  font-size: 1.6rem;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+}
