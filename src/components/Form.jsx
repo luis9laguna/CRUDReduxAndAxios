@@ -94,7 +94,7 @@ const Form = ({id}) => {
                 </div>
                 <div className={styles.formDiv}>
                     <label htmlFor="price">Price</label>
-                    <input placeholder="price" 
+                    <input placeholder="Price" 
                         type="number" 
                         id="price" 
                         name="price" 

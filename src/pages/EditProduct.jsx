@@ -6,9 +6,9 @@ const EditProduct = () => {
     const {id} = useParams()
 
     return (
-            <div>
+            <>
             <Form id={id}/>
-            </div>
+            </>
         )
 }
 

@@ -37,12 +37,12 @@ const index = () => {
     }
 
     return (
-        <div style={style}>
+        <a style={style}>
             <h2 style={title}>All The Products</h2>
             { error && <p>An Error Has Occurred</p> }
             {loading && <p>Loading...</p>}
             <Products products={products}/>
-        </div>
+        </a>
     )
 }
 

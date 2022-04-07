@@ -1,9 +1,9 @@
 .table {
   border-collapse: collapse;
-  margin: 25px 0;
+  margin: 2rem 1rem;
   font-size: 0.9rem;
   width: 70%;
-  min-width: 320px;
+  min-width: 280px;
   border-radius: 5px;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -45,6 +45,8 @@
 .table td {
   color: #111d33;
   font-size: 1rem;
+  text-transform: capitalize;
+  font-weight: bold;
 }
 .table td button {
   width: 100px;

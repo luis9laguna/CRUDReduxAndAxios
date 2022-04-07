@@ -24,14 +24,13 @@ export function createNewProductAction(product) {
     return async (dispatch) => {
         dispatch(addProduct())
         try {
-            await clientAxios.post('/products', product)
+            await clientAxios.post('/products.json', product)
             dispatch(addProductSuccesfully(product))
 
             //MESSAGE
             swal("Excellent", "The product has been added succesfully", "success");
 
         } catch (error) {
-            console.log(error);
             dispatch(addProductError(true))
 
             //MESSAGE
@@ -66,8 +65,18 @@ export function getProductsAction() {
     return async (dispatch) => {
         dispatch(getProducts())
         try {
-            const response = await clientAxios.get('/products')
-            dispatch(getProductsSuccesfully(response.data))
+            const response = await clientAxios.get('/products.json')
+            const result = response.data
+            const loadedProducts = []
+
+            for (const key in result) {
+                loadedProducts.push({
+                    id: key,
+                    name: result[key].name,
+                    price: result[key].price,
+                })
+            }
+            dispatch(getProductsSuccesfully(loadedProducts))
         } catch (error) {
             dispatch(getProductsError(true))
         }
@@ -97,7 +106,7 @@ export function deleteProductAction(id) {
         dispatch(deleteProduct(id))
 
         try {
-            await clientAxios.delete(`/products/${id}`)
+            await clientAxios.delete(`/products/${id}.json`)
             dispatch(deleteProductSuccesfully())
             swal("Poof! Your product has been deleted!", {
                 icon: "success",
@@ -142,7 +151,7 @@ export function editProductAction(product) {
     return async (dispatch) => {
         dispatch(editProduct(product))
         try {
-            await clientAxios.put(`/products/${product.id}`, product)
+            await clientAxios.put(`/products/${product.id}.json`, product)
             dispatch(editProductSuccesfully(product))
 
             //MESSAGE
